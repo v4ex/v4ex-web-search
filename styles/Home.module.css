@@ -1,0 +1,32 @@
+/* Copyright (c) V4EX Inc. SPDX-License-Identifier: GPL-3.0-or-later */
+
+/* Purpose: Provide Cascading Style Sheets for Home module scope. */
+
+
+.container {
+  height: 100vh;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 5rem 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+}
+
+.title {
+  margin: 1rem;
+  line-height: 1.15;
+  font-size: 3rem;
+}

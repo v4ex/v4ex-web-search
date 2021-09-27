@@ -1,0 +1,30 @@
+/* Copyright (c) V4EX Inc. SPDX-License-Identifier: GPL-3.0-or-later */
+
+/* Purpose: Provide Cascading Style Sheets for Result module scope. */
+
+
+.container {
+  padding: 0 2rem;
+}
+
+.header {
+  display: flex;
+  border-bottom: 1px solid gray;
+  align-items: center;
+}
+
+.header .logo {
+
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+.footer {
+
+}
+
+.footer .logo {
+  float: right;
+}

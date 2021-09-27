@@ -1,0 +1,65 @@
+/* Copyright (c) V4EX Inc. SPDX-License-Identifier: GPL-3.0-or-later */
+
+/* Purpose: Provide Cascading Style Sheets for SearchBox module scope. */
+
+
+.search-box {
+  width: 100%;
+}
+
+.search-form {
+}
+
+.search-control {
+  display: flex;
+  border: 1px solid gray;
+  height: 2.5rem;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.search-control:focus {
+  box-shadow: 1px 1px 5px grey;
+}
+.search-control:hover {
+  box-shadow: 1px 1px 5px grey;
+}
+
+.search-icon {
+  margin-top: 0.6rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  margin-right: 1rem;
+  width: 100%;
+}
+
+.search-clear {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.search-submit {
+  float: right;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin: 1rem 0.3rem;
+  padding: 0 1rem;
+  line-height: 2.5rem;
+  height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  min-width: 20%;
+}
+
+.search-submit:hover {
+  box-shadow: 1px 1px 5px grey;
+}

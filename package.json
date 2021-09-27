@@ -1,0 +1,27 @@
+{
+  "name": "v4ex-web-search",
+  "version": "1.0.0-alpha",
+  "description": "V4EX Web System: Search Engine System.",
+  "repository": "github:v4ex/v4ex-web-search",
+  "author": "V4EX Inc. <v4ex-web-search@v4ex.com> (https://v4ex.com/)",
+  "contributors": [
+    "Xuwei Li <v4ex-web-search@xuwei.li> (https://xuwei.li/)"
+  ],
+  "license": "GPL-3.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2"
+  }
+}
