@@ -1,7 +1,7 @@
 {
   "name": "v4ex-web-search",
   "version": "1.0.0-alpha",
-  "description": "V4EX Web System: Search Engine System.",
+  "description": "V4EX Web System: V4EX Search Engine.",
   "repository": "github:v4ex/v4ex-web-search",
   "author": "V4EX Inc. <v4ex-web-search@v4ex.com> (https://v4ex.com/)",
   "contributors": [
