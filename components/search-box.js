@@ -43,9 +43,9 @@ export default class SearchBox extends React.Component {
     event.preventDefault()
     const query = this.state.searchInput
     if (this.needRefresh) {
-      window.location = '/' + query
+      window.location = '/search?q=' + query
     } else {
-      Router.push('/' + query)
+      Router.push('/search?q=' + query)
     }
   }
   

@@ -25,7 +25,7 @@ export default withRouter(class Result extends React.Component {
   constructor(props) {
     super(props)
 
-    this.query = props.router.query.query
+    this.query = props.router.query.q
     this.content = props.content
   }
 
@@ -80,7 +80,7 @@ export default withRouter(class Result extends React.Component {
 })
 
 export async function getServerSideProps(context) {
-  const content = await v4exSearch(context.params.query)
+  const content = await v4exSearch(context.query.q)
 
   return {
     props: {
