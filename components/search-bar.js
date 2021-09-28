@@ -50,7 +50,6 @@ export default class SearchBar extends React.Component {
   }
   
   render() {
-    console.log(styles)
     return(
       <div id="search-bar" className={styles['search-bar']}>
         <Head>

@@ -31,9 +31,9 @@ export default withRouter(class Result extends React.Component {
 
 
   render() {
-    const content = this.content.map(item => {
+    const content = this.content.map((item, index) => {
       return (
-        <article>
+        <article key={index}>
           <h3>
             <a href={item.link} style={externalLinkStyle}>{item.title}</a>
           </h3>
@@ -46,7 +46,7 @@ export default withRouter(class Result extends React.Component {
       <div className={styles.container}>
         <Head>
           <title>Search Result for {this.query} | DO YOU LOVE US? | V4EX Search</title>
-          <meta name="description" content={'Search Result for' + this.query} />
+          <meta name="description" content={'Search results for' + this.query} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
@@ -61,7 +61,7 @@ export default withRouter(class Result extends React.Component {
         </header>
 
         <main className={styles.main}>
-          Search Result for {this.query}:
+          Search results for {this.query}:
           {content}
         </main>
 
