@@ -21,6 +21,16 @@
   margin-top: 2rem;
 }
 
+.result {
+
+}
+
+.result h3 sub {
+  color: gray;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
 .footer {
 
 }

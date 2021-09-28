@@ -13,7 +13,7 @@ import { withRouter } from 'next/router'
 import v4exSearch from '../lib/v4ex-search'
 
 import SearchBar from '../components/search-bar'
-import styles from '../styles/Result.module.css'
+import styles from '../styles/Results.module.css'
 
 
 const externalLinkStyle = {
@@ -33,9 +33,10 @@ export default withRouter(class Result extends React.Component {
   render() {
     const content = this.content.map((item, index) => {
       return (
-        <article key={index}>
+        <article key={index} className={styles.result}>
           <h3>
             <a href={item.link} style={externalLinkStyle}>{item.title}</a>
+            <sub>{item.link}</sub>
           </h3>
           <p>{item.snippet}</p>
         </article>
