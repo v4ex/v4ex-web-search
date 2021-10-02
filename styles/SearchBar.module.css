@@ -14,7 +14,7 @@
 .search-control {
   display: flex;
   border: 1px solid gray;
-  height: 2.5rem;
+  height: 2.8rem;
   width: 100%;
   border-radius: 5px;
 }
@@ -29,7 +29,7 @@
 }
 
 .search-clear {
-  margin-top: 0.7rem;
+  margin-top: 0.8rem;
   margin-left: 1rem;
   margin-right: 1rem;
   cursor: pointer;
