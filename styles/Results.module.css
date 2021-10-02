@@ -5,6 +5,7 @@
 
 .container {
   padding: 0 2rem;
+  width: 100%;
 }
 
 .header {
@@ -29,6 +30,7 @@
   color: gray;
   font-size: 0.8rem;
   margin-left: 1rem;
+  word-wrap: break-word;
 }
 
 .footer {
