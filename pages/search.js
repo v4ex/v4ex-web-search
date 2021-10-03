@@ -13,6 +13,8 @@ import { withRouter } from 'next/router'
 import v4exSearch from '../lib/v4ex-search'
 
 import SearchBar from '../components/search-bar'
+import Pagination from '../components/pagination'
+
 import styles from '../styles/Results.module.css'
 
 
@@ -25,13 +27,15 @@ export default withRouter(class Result extends React.Component {
   constructor(props) {
     super(props)
 
-    this.query = props.router.query.q
-    this.content = props.content
+    this.state = {
+      query: props.router.query.q,
+      page: props.router.query.p,
+      content: props.content
+    }
   }
 
-
   render() {
-    const content = this.content.map((item, index) => {
+    const content = this.state.content.map((item, index) => {
       return (
         <article key={index} className={styles.result}>
           <h3>
@@ -46,8 +50,8 @@ export default withRouter(class Result extends React.Component {
     return(
       <div className={styles.container}>
         <Head>
-          <title>Search Result for {this.query} | DO YOU LOVE US? | V4EX Search</title>
-          <meta name="description" content={'Search results for' + this.query} />
+          <title>Search Result for {this.state.query} | DO YOU LOVE US? | V4EX Search</title>
+          <meta name="description" content={'Search results for' + this.state.query} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
@@ -58,12 +62,13 @@ export default withRouter(class Result extends React.Component {
             </Link>
           </h1>
 
-          <SearchBar input={this.query} />
+          <SearchBar input={this.state.query} />
         </header>
 
         <main className={styles.main}>
-          Search results for {this.query}:
+          Search results for {this.state.query}:
           {content}
+          <Pagination />
         </main>
 
         <footer className={styles.footer}>
