@@ -1,9 +1,11 @@
 /* Copyright (c) V4EX Inc. SPDX-License-Identifier: GPL-3.0-or-later */
 
-// Purpose: Provide an API to fetch search result from V4EX Search.
+// Purpose: Provide on site API for search.
 
 
-module.exports = async (query, page) => {
+export default async function handler(req, res) {
+  const query = decodeURIComponent(req.query.q)
+  const page = parseInt(req.query.p)
 
   const url = process.env.V4EX_API_SEARCH_V1 + '/' + encodeURIComponent(query)
   const urlMore = url + '?more=1'
@@ -12,11 +14,11 @@ module.exports = async (query, page) => {
 
   const start = (page - 1) * 10
 
-  return {
+  res.status(200).json({
     results: rawResults.slice(start, start + 10),
     page: {
       amount: Math.ceil(rawResults.length / 10),
       current: page
     }
-  }
+  })
 }

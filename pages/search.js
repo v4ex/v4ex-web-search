@@ -32,6 +32,18 @@ export default withRouter(class Result extends React.Component {
       page: props.router.query.p,
       content: props.content
     }
+
+    this.handlePageChange = this.handlePageChange.bind(this)
+  }
+
+  async handlePageChange(newPage) {
+    const response = await fetch(`/api/search?q=${this.state.query}&p=${newPage}`)
+    const result = await response.json()
+
+    this.setState({
+      page: newPage,
+      content: result.results
+    })
   }
 
   render() {
@@ -68,7 +80,7 @@ export default withRouter(class Result extends React.Component {
         <main className={styles.main}>
           Search results for {this.state.query}:
           {content}
-          <Pagination />
+          <Pagination amount={this.props.pageAmount} onPageChange={this.handlePageChange} />
         </main>
 
         <footer className={styles.footer}>
@@ -86,11 +98,16 @@ export default withRouter(class Result extends React.Component {
 })
 
 export async function getServerSideProps(context) {
-  const content = await v4exSearch(context.query.q)
+  const query = decodeURIComponent(context.query.q)
+  const page = context.query.p ? parseInt(context.query.p) : 1
+
+  const result = await v4exSearch(query, page)
+  // console.log(result)
 
   return {
     props: {
-      content
+      content: result.results,
+      pageAmount: result.page.amount
     }
   }
 }

@@ -43,10 +43,13 @@ export default withRouter(class Pagination extends React.Component {
   }
 
   handlePageChange(event) {
+    // window.location = event.target.href
+
     const url = new URL(event.target.href)
     
-    this.setState({
-      current: parseInt(url.searchParams.get('p'))
+    this.setState((state, props) => {
+      state.current = parseInt(url.searchParams.get('p'))
+      props.onPageChange(state.current)
     })
 
     this.props.router.push(event.target.href)
