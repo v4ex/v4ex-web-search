@@ -18,7 +18,7 @@ class PaginationItem extends React.Component {
   render() {
     return(
       <span className={styles['pagination-item']}>
-        {this.props.router && <Link href={this.props.router}><a page={this.props.router.query.p} onClick={this.props.onClick}>{this.props.label}</a></Link>}
+        {this.props.router && <Link href={this.props.router}><a onClick={this.props.onClick}>{this.props.label}</a></Link>}
         {!this.props.router && this.props.label}
       </span>
     )
@@ -49,7 +49,7 @@ export default withRouter(class Pagination extends React.Component {
       current: parseInt(url.searchParams.get('p'))
     })
 
-    this.props.router.push(event.target)
+    this.props.router.push(event.target.href)
   }
   
   render() {
@@ -61,9 +61,9 @@ export default withRouter(class Pagination extends React.Component {
       // Pages
       while (amount > 0) {
         if (this.state.current === page) {
-          items.push(<PaginationItem label={page} />)
+          items.push(<PaginationItem key={page} label={page} />)
         } else {
-          items.push(<PaginationItem label={page} router={{
+          items.push(<PaginationItem key={page} label={page} router={{
             pathname: this.props.router.pathname,
             query: {
               q: this.props.router.query.q,
@@ -78,7 +78,7 @@ export default withRouter(class Pagination extends React.Component {
 
       // Previous
       if (this.state.current > 1) {
-        items.unshift(<PaginationItem className="previous" label="Previous" router={{
+        items.unshift(<PaginationItem key="previous" className="previous" label="Previous" router={{
           pathname: this.props.router.pathname,
           query: {
             q: this.props.router.query.q,
@@ -89,7 +89,7 @@ export default withRouter(class Pagination extends React.Component {
 
       // Next
       if (this.state.current < this.state.amount - 1) {
-        items.push(<PaginationItem className="next" label="Next" router={{
+        items.push(<PaginationItem key="next" className="next" label="Next" router={{
           pathname: this.props.router.pathname,
           query: {
             q: this.props.router.query.q,
