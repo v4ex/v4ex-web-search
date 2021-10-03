@@ -91,7 +91,7 @@ export default withRouter(class Pagination extends React.Component {
       }
 
       // Next
-      if (this.state.current < this.state.amount - 1) {
+      if (this.state.current < this.state.amount) {
         items.push(<PaginationItem key="next" className="next" label="Next" router={{
           pathname: this.props.router.pathname,
           query: {
