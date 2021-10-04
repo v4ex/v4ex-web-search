@@ -98,6 +98,15 @@ export default withRouter(class Result extends React.Component {
 })
 
 export async function getServerSideProps(context) {
+  if (typeof context.query.q === 'undefined') {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+
   const query = decodeURIComponent(context.query.q)
   const page = context.query.p ? parseInt(context.query.p) : 1
 
