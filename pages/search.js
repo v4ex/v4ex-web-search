@@ -15,13 +15,8 @@ import v4exSearch from '../lib/v4ex-search'
 import SearchBar from '../components/search-bar'
 import Pagination from '../components/pagination'
 
-import styles from '../styles/Results.module.css'
+import styles from '../styles/Search.module.css'
 
-
-const externalLinkStyle = {
-  color: 'blue',
-  textDecoration: 'none'
-}
 
 export default withRouter(class Result extends React.Component {
   constructor(props) {
@@ -51,7 +46,7 @@ export default withRouter(class Result extends React.Component {
       return (
         <article key={index} className={styles.result}>
           <h3>
-            <a href={item.link} style={externalLinkStyle}>{item.title}</a>
+            <a href={item.link}>{item.title}</a>
             <sub>{item.link}</sub>
           </h3>
           <p>{item.snippet}</p>

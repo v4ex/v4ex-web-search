@@ -23,7 +23,11 @@
 }
 
 .result {
+}
 
+.result h3 a {
+  color: blue;
+  text-decoration: none;
 }
 
 .result h3 sub {
