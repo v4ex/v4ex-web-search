@@ -93,6 +93,7 @@ export default withRouter(class Result extends React.Component {
 })
 
 export async function getServerSideProps(context) {
+  // Redirect to homepage for empty query
   if (typeof context.query.q === 'undefined') {
     return {
       redirect: {
@@ -102,7 +103,8 @@ export async function getServerSideProps(context) {
     }
   }
 
-  const query = decodeURIComponent(context.query.q)
+  // System has done decodeURIComponent() already.
+  const query = context.query.q
   const page = context.query.p ? parseInt(context.query.p) : 1
 
   const result = await v4exSearch(query, page)

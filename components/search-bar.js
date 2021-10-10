@@ -41,7 +41,8 @@ export default class SearchBar extends React.Component {
 
   handleSearchSubmit(event) {
     event.preventDefault()
-    const query = this.state.searchInput
+
+    const query = encodeURIComponent(this.state.searchInput)
     if (this.needRefresh) {
       window.location = '/search?q=' + query
     } else {
